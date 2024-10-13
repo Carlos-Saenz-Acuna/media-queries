@@ -7,20 +7,15 @@
   margin: 0;
 }
 
-body{
-
-}
 
 .nav{
-    grid-area: main;
+    grid-area: nav;
     display: flex;
     justify-content: space-between;
     padding: 1rem;
     background-color: #00579C;
     color: white;
     height: 3vh;
-
-
 }
 
 .aside{
@@ -30,17 +25,12 @@ body{
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     color: black;
-    height: 7vh;
-
+    height: 8vh;
 }
 
-
 .main{
-    grid-area: main;
-    height: 75vh;
+    height: 72vh;
     overflow: scroll;
-    
-
 }
 
 .footer{
@@ -61,13 +51,18 @@ body{
     color:;
 }
 
+button{
+  background-color: #00579C;
+  color: white;
+  height: 30px;
+  text-shadow: 2px 2px 2px black;
+}
 
 .productos{
     padding: 1rem 1rem;
     grid-area: menu;
     display:grid;
     gap: 1rem;
-      
 }
 
 .caja-producto{
@@ -86,10 +81,36 @@ img{
     padding-top: 2rem;
 }
 
-button{
-  background-color: #00579C;
-  color: white;
-  height: 30px;
-  text-shadow: 2px 2px 2px black;
+
+@media (min-width: 576px){
+    body{
+        height: 100vh;
+        display: grid;
+        grid-template-columns: auto 8fr;
+        grid-template-areas:
+        "nav aside"
+        "nav main"
+        "nav main"
+        "footer main";
+
+        .nav{
+        height: auto;
+        min-width: 5rem;
+        }
+       .productos{
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
+        .main{
+            height: auto;
+        }
+        .footer{
+            height: auto;
+            max-width: 10rem;
+            padding: 1rem;
+        }
+
+
+
+    }
 }
 
