@@ -29,7 +29,7 @@
 }
 
 .main{
-    height: 72vh;
+    height: 60vh;
     overflow: scroll;
 }
 
@@ -41,6 +41,16 @@
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     height: 5vh;
+}
+
+.menu{
+        display: none;
+}
+
+.numero{
+        grid-area: numero;
+        display: flex;
+        justify-content: center;
 }
 
 .btn {
@@ -78,9 +88,7 @@ button{
 img{
     width: 75%;
     margin: auto;
-    padding-top: 2rem;
 }
-
 
 @media (min-width: 576px){
     body{
@@ -88,29 +96,53 @@ img{
         display: grid;
         grid-template-columns: auto 8fr;
         grid-template-areas:
-        "nav aside"
-        "nav main"
-        "nav main"
-        "footer main";
+        "nav    aside"
+        "menu   main"
+        "menu   main"
+        "menu   main"
+        "footer numero";
 
         .nav{
-        height: auto;
-        min-width: 5rem;
+            height: auto;
+            min-width: 5rem;
         }
+        .menu{
+            grid-area: menu;
+            display: flex;
+            height: auto;
+            justify-content: center;
+            list-style: none;
+            padding-top: 2rem;
+            background-color: #00579C;
+            text-align: center;
+            color: white;
+        }
+
+
+
        .productos{
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(150px, auto));
         }
         .main{
-            height: auto;
+            height: 75vh;
         }
+        .numero{
+            padding: 1rem;
+}
         .footer{
             height: auto;
+            
             max-width: 10rem;
             padding: 1rem;
         }
 
+        ul {
+            list-style-type: none;
+        }
 
-
+        li {
+        margin: 0.5rem;
+        }
     }
 }
 
